@@ -1,3 +1,5 @@
+import pandas as pd
+
 from nba_api.stats.static import players
 
 player_dict = players.get_players()
@@ -19,3 +21,9 @@ print(f"{gsw}")
 
 gsw_id = gsw["id"]
 print(f"{gsw_id}")
+
+from nba_api.stats.endpoints import playergamelog
+
+gamelog_lebron = playergamelog.PlayerGameLog(player_id="2544")
+gamelog_lebron_df = gamelog_lebron.get_data_frames()[0]
+print(f"{gamelog_lebron_df}")
