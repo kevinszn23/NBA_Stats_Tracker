@@ -30,8 +30,22 @@ player_dict = players.get_players()
 
 from nba_api.stats.endpoints import playercareerstats
 
-ppg = playercareerstats.PlayerCareerStats(player_id="2544")
-ppg.get_data_frames()[0]
-ppg.get_json()
-ppg.get_dict()
-print(f"{ppg.get_dict()}")
+# ppg = playercareerstats.PlayerCareerStats(player_id="2544")
+# ppg.get_data_frames()[0]
+# ppg.get_json()
+# ppg.get_dict()
+# print(f"{ppg.get_data_frames()[0]}")
+
+# ppg2 = playercareerstats.PlayerCareerStats(player_id="2544")
+# print(f"{ppg2.season_totals_regular_season.get_data_frame()}")
+
+dfs = playercareerstats.PlayerCareerStats(
+            player_id="2544", per_mode36="PerGame"
+).get_data_frames()[1]
+print(f"{dfs}")
+
+
+# from nba_api.stats.endpoints import commonplayerinfo
+
+# sohaib = commonplayerinfo.CommonPlayerInfo(player_id="2544")
+# print(f"{sohaib.get_data_frames()[0]}")
