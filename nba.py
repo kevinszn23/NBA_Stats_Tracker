@@ -47,14 +47,9 @@ from nba_api.stats.endpoints import playercareerstats
 
 # season averages
 dfs = playercareerstats.PlayerCareerStats(
-            player_id="2544", per_mode36="PerGame"
+            player_id="2544", per_mode36="PerGame", league_id_nullable="00"
 ).get_data_frames()[0]
 print(f"{dfs}")
 
-
-
-
-# from nba_api.stats.endpoints import commonplayerinfo
-
-# sohaib = commonplayerinfo.CommonPlayerInfo(player_id="2544")
-# print(f"{sohaib.get_data_frames()[0]}")
+lcs = dfs.iloc[19]
+print(f"{lcs}")
