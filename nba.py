@@ -39,13 +39,13 @@ from nba_api.stats.endpoints import playercareerstats
 # ppg2 = playercareerstats.PlayerCareerStats(player_id="2544")
 # print(f"{ppg2.season_totals_regular_season.get_data_frame()}")
 
-# career averages
+# lebron career averages
 # dfs = playercareerstats.PlayerCareerStats(
 #             player_id="2544", per_mode36="PerGame"
 # ).get_data_frames()[1]
 # print(f"{dfs}")
 
-# season averages
+# lebron season averages
 dfs = playercareerstats.PlayerCareerStats(
             player_id="2544", per_mode36="PerGame", league_id_nullable="00"
 ).get_data_frames()[0]
