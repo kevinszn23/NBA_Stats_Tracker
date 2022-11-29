@@ -8,12 +8,12 @@ import requests
 from main_app.models import Player
 
 # Create your views here.
-class Home(TemplateView):
-    template_name = "home.html"
+# class Home(TemplateView):
+#     template_name = "home.html"
 
-def show_page(request):
+def home(request):
     all_players = {}
-    all_players_url = "https://stats.nba.com/stats/playercareerstats"
+    all_players_url = "https://www.nba.com/stats/player/201142"
     response_all_players = requests.get(all_players_url)
     temp_all_players = response_all_players.json()
     result_all_players = temp_all_players['data']
@@ -26,4 +26,4 @@ def show_page(request):
         )
         player_data.save()
     all_players = Player.objects.all().order_by('-id')
-    return render(request, "show_page.html", {"all_players": result_all_players})
+    return render(request, "home.html", {"all_players": all_players})
