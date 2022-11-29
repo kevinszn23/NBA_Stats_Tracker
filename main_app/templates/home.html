@@ -1,12 +1,22 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>NBA Stat Tracker</title>
-</head>
-<body>
+  </head>
+  <body>
     <h1>NBA Stat Tracker Home</h1>
-</body>
+
+    <h2>
+      {% if all_players %} {% for i in all_players %}
+      <div class="all_players">
+        <p>{{ i.first_name }} {{ i.last_name }} - {{ i.position }}</p>
+        <p>{{ i.team.full_name }}</p>
+      </div>
+      {%endfor%}
+    </h2>
+    {% endif %}
+  </body>
 </html>
