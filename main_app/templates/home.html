@@ -10,13 +10,14 @@
     <h1>NBA Stat Tracker Home</h1>
 
     <h2>
-      {% if all_players %} {% for i in all_players %}
+      {% comment %} {% if all_players %} {% for i in all_players %}
       <div class="all_players">
         <p>{{ i.first_name }} {{ i.last_name }} - {{ i.position }}</p>
         <p>{{ i.team.full_name }}</p>
       </div>
       {% endfor %}
-      {% endif %}
+      {% endif %} {% endcomment %}
+      {{dfs}}
     </h2>
   </body>
 </html>
