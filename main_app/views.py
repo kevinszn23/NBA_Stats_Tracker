@@ -2,16 +2,18 @@ from django.shortcuts import render
 from django.views import View
 from django.http import HttpResponse
 from django.views.generic.base import TemplateView
+from django.views.generic.detail import DetailView
 from nba_api.stats.endpoints import playercareerstats
 # from django.http import JsonResponse
 import requests
 from main_app.models import Player
 # import sys
+import json
 
 # Create your views here.
-class Home(TemplateView):
-    template_name = "home.html"
-    model = Player
+# class Home(DetailView):
+#     model = Player
+#     template_name = "home.html"
 
     # def nba_api_test(request):
     #     dfs = playercareerstats.PlayerCareerStats(
@@ -22,13 +24,20 @@ class Home(TemplateView):
     #     lcs = dfs.iloc[19]
     #     print(f"{lcs}")
     #     return render(request, "home.html")
-    
-    def balldontdie(request):
-        requests.get("https://www.balldontlie.io/api/v1/players/237")
-        data = response.json()
-        return render(request, "home.html", {
-            "nba": data["display"]
-        })
+
+    # def balldontlie(self):
+    #     response = requests.get("https://www.balldontlie.io/api/v1/players/237")
+    #     data = response.json()
+    #     return data["disclaimer"]
+
+    # def get_context_data(self, *args, **kwargs):
+    #     context = super(Home, self).get_context_data(*args, **kwargs)
+    #     context['base'] = self.balldontlie()
+    #     return context
+
+# def index(request):
+#     response=requests.get("https://stats.nba.com/stats/playercareerstats?LeagueID=&PerMode=Totals&PlayerID=2544").json()
+#     return render(request,'index.html',{'response':response})
 
 
 # def home(request):

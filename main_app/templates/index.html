@@ -1,0 +1,11 @@
+<html>
+<head>
+    <title>API Display</title>
+</head>
+<body>
+    <h1>Player names</h1>
+    {% for i in response %}
+    <strong>{{i.data.data[0].id}}</strong>
+    {% endfor %}
+</body>
+</html>
